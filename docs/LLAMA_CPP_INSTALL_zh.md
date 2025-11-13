@@ -23,13 +23,13 @@ pip uninstall -y llama-cpp-python
 ## 4. 源码安装命令
 ### Linux / WSL2
 ```bash
-CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON" \
+CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON -DLLAMA_CUDA=ON" \
 pip install -U "llama-cpp-python @ git+https://github.com/ggerganov/llama.cpp.git#subdirectory=bindings/python"
 ```
 
 ### Windows (PowerShell)
 ```powershell
-$env:CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON"
+SET CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON -DLLAMA_CUDA=ON"
 pip install -U "llama-cpp-python @ git+https://github.com/ggerganov/llama.cpp.git#subdirectory=bindings/python"
 ```
 
