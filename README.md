@@ -52,11 +52,12 @@ The ComfyUI-QwenVL custom node integrates the powerful Qwen-VL series of vision-
    cd ComfyUI/custom\_nodes  
    git clone https://github.com/1038lab/ComfyUI-QwenVL.git
    ```
-2. Install the required dependencies:  
+2. Install the required dependencies:
    ```
-   cd ComfyUI/custom_nodes/ComfyUI-QwenVL  
+   cd ComfyUI/custom_nodes/ComfyUI-QwenVL
    pip install -r requirements.txt
    ```
+   > **GGUF note:** Qwen3-VL GGUF requires llama-cpp-python to be built from source with MMVQ enabled. If you plan to use the GGUF node, run the installation command with `CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON"`.
 
 3. Restart ComfyUI.
 
@@ -146,17 +147,25 @@ This node utilizes the Qwen-VL series of models, developed by the Qwen Team at A
 
 ### **✅ Completed (v1.0.0)**
 
-* ✅ Support for Qwen3-VL and Qwen2.5-VL models.  
-* ✅ Automatic model downloading and management.  
-* ✅ On-the-fly 4-bit, 8-bit, and FP16 quantization.  
-* ✅ Hardware compatibility checks for FP8 models.  
+* ✅ Support for Qwen3-VL and Qwen2.5-VL models.
+* ✅ Automatic model downloading and management.
+* ✅ On-the-fly 4-bit, 8-bit, and FP16 quantization.
+* ✅ Hardware compatibility checks for FP8 models.
 * ✅ Image and Video (frame sequence) input support.
+* ✅ GGUF node for **Qwen3-VL-2B-Thinking** via llama.cpp.
 
 ### **🔄 Future Plans**
-* GGUF format support for CPU and wider hardware compatibility.
-* Integration of more vision-language models.  
-* Advanced parameter options for fine-tuning generation.  
+* Integration of more vision-language models.
+* Advanced parameter options for fine-tuning generation.
 * Support for additional video processing features.
+
+## **🧊 Qwen3-VL GGUF Node (2B Thinking)**
+
+Looking for the CPU-friendly workflow? Head over to the dedicated guide:
+
+➡️ [Qwen3-VL GGUF Node Guide](docs/GGUF.md)
+
+It walks through the MMVQ build requirements, install commands, usage tips, and troubleshooting steps specific to the GGUF integration.
 
 ## **🙏 Credits**
 

@@ -15,6 +15,6 @@ opencv-python
 # Optional (for FlashAttention v2 optimization)
 flash-attn>=2.5.6; platform_system=="Linux" and extra=="cuda"
 
-# For running GGUF models with vision support (planned feature)
-# llama-cpp-python[server]
+# For running GGUF models with vision support (build from source with MMVQ enabled)
+llama-cpp-python @ git+https://github.com/ggerganov/llama.cpp.git@master#subdirectory=bindings/python
 
