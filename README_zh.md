@@ -38,16 +38,17 @@ ComfyUI-QwenVL 是一款自定义节点，它集成了来自阿里云的强大 Q
 
 ## **🚀 安装**
 
-1. 将此仓库克隆到您的 ComfyUI/custom\_nodes 目录：  
+1. 将此仓库克隆到您的 ComfyUI/custom\_nodes 目录：
 ```
-   cd ComfyUI/custom\_nodes  
+   cd ComfyUI/custom\_nodes
    git clone https://github.com/1038lab/ComfyUI-QwenVL.git\
 ```
-2. 安装所需的依赖项：  
+2. 安装所需的依赖项：
 ```
-   cd ComfyUI/custom\_nodes/ComfyUI-QwenVL  
+   cd ComfyUI/custom\_nodes/ComfyUI-QwenVL
    pip install \-r requirements.txt
 ```
+> **GGUF 提醒：** 如果计划使用 Qwen3-VL GGUF 节点，请在执行上述安装命令前设置 `CMAKE_ARGS="-DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_MMVQ=ON"`，确保编译出的 llama-cpp-python 启用了 MMVQ。需要更详细的依赖安装流程？请查阅 [llama-cpp-python 安装与 MMVQ 编译指南](docs/LLAMA_CPP_INSTALL_zh.md)。
 3. 重启 ComfyUI。
 
 ## **📥 下载模型**
@@ -129,19 +130,36 @@ ComfyUI-QwenVL 是一款自定义节点，它集成了来自阿里云的强大 Q
 
 ### **✅ 已完成 (v1.0.0)**
 
-* ✅ 支持 Qwen3-VL 和 Qwen2.5-VL 模型。  
-* ✅ 自动模型下载和管理。  
-* ✅ 即时 4-bit、8-bit 和 FP16 量化。  
-* ✅ 针对 FP8 模型的硬件兼容性检查。  
-* ✅ 支持图像和视频（帧序列）输入。  
-* ✅ **即将支持 GGUF 模型格式。**
+* ✅ 支持 Qwen3-VL 和 Qwen2.5-VL 模型。
+* ✅ 自动模型下载和管理。
+* ✅ 即时 4-bit、8-bit 和 FP16 量化。
+* ✅ 针对 FP8 模型的硬件兼容性检查。
+* ✅ 支持图像和视频（帧序列）输入。
+* ✅ 基于 llama.cpp 的 **Qwen3-VL-2B-Thinking GGUF 节点**。
 
 ### **🔄 未来计划**
 
-* GGUF 格式支持 CPU 和更广泛的硬件兼容性。  
-* 集成更多视觉语言模型。  
-* 提供更高级的参数选项以微调生成过程。  
+* 集成更多视觉语言模型。
+* 提供更高级的参数选项以微调生成过程。
 * 支持额外的视频处理功能。
+
+## **🧊 Qwen3-VL GGUF 节点（2B Thinking）**
+
+想要了解 CPU 友好的 GGUF 流程？请查看专属指南：
+
+➡️ [Qwen3-VL GGUF 节点指南](docs/GGUF_zh.md)
+
+➡️ [llama-cpp-python 安装与 MMVQ 编译指南](docs/LLAMA_CPP_INSTALL_zh.md)
+
+其中包含 MMVQ 编译要求、详细安装命令、节点使用技巧与常见问题解法。
+
+## **🛠️ 第一次使用与提交流程**
+
+如果你刚接触本项目、需要知道如何在本地测试并创建 Pull Request，请参照：
+
+➡️ [第一次使用与贡献指南](docs/CONTRIBUTING_zh.md)
+
+该文档按“准备环境 → 本地测试 → 提交 PR”给出逐步命令，包括 MMVQ 编译、示例工作流验证、常规检查命令以及 `git push` 与 PR 创建步骤。
 
 ## **🙏 致谢**
 
